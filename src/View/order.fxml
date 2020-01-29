@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.OrderController">
+   <children>
+      <Label layoutX="34.0" layoutY="31.0" prefHeight="38.0" prefWidth="140.0" text="Our Products">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="337.0" prefHeight="38.0" prefWidth="102.0" text="In Cart">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_add" alignment="CENTER" layoutX="180.0" layoutY="303.0" mnemonicParsing="false" onAction="#addButton" prefHeight="53.0" prefWidth="116.0" text="Add to cart" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="button_remove" alignment="CENTER" layoutX="413.0" layoutY="300.0" mnemonicParsing="false" onAction="#removeButton" prefHeight="53.0" prefWidth="116.0" text="Remove from cart" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="button_makeOrder" layoutX="685.0" layoutY="473.0" mnemonicParsing="false" onAction="#makeOrder" prefHeight="96.0" prefWidth="123.0" text="Make Order" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="71.0" fitWidth="56.0" layoutX="296.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Allan/Documents/Nackademin/Databas%20Teknink/Inlämningsuppgift%202/INL2/src/arrowDOWNpng.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="56.0" layoutX="529.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Allan/Documents/Nackademin/Databas%20Teknink/Inlämningsuppgift%202/INL2/src/arrowUP.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table_cart" layoutX="34.0" layoutY="373.0" prefHeight="200.0" prefWidth="627.0">
+        <columns>
+          <TableColumn fx:id="col_cart_Shoe" editable="false" prefWidth="171.0" resizable="false" text="Shoe" />
+          <TableColumn fx:id="col_cart_brand" editable="false" prefWidth="141.0" resizable="false" text="Brand" />
+            <TableColumn fx:id="col_cart_color" editable="false" prefWidth="114.0" resizable="false" text="Color" />
+            <TableColumn fx:id="col_cart_size" editable="false" prefWidth="93.0" resizable="false" text="Size" />
+            <TableColumn fx:id="col_cart_price" editable="false" prefWidth="107.0" resizable="false" text="Price" />
+        </columns>
+      </TableView>
+      <Label layoutX="709.0" layoutY="355.0" text="Total:" textAlignment="CENTER" underline="true" wrapText="true">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_total" alignment="CENTER" layoutX="709.0" layoutY="395.0" prefHeight="21.0" prefWidth="76.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableProduct" layoutX="33.0" layoutY="69.0" prefHeight="200.0" prefWidth="755.0">
+        <columns>
+          <TableColumn fx:id="col_shoe" editable="false" prefWidth="236.0" text="Shoe" />
+          <TableColumn fx:id="col_brand" editable="false" minWidth="0.0" prefWidth="177.0" text="Brand" />
+            <TableColumn fx:id="col_color" editable="false" prefWidth="135.0" text="Color" />
+            <TableColumn fx:id="col_size" editable="false" prefWidth="67.0" text="Size" />
+            <TableColumn fx:id="col_price" editable="false" minWidth="6.0" prefWidth="85.0" text="Price" />
+            <TableColumn fx:id="col_stock" editable="false" minWidth="0.0" prefWidth="54.0" text="Stock" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

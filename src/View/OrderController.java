@@ -27,6 +27,7 @@ public class OrderController implements Initializable {
     private int total;
     private List<ProductCart> productCarts = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
+    private String errorMsg = "";
 
     @FXML
     private Label label_total;
@@ -143,8 +144,11 @@ public class OrderController implements Initializable {
         int orderNumber = or.getNewOrder();
         if (!table_cart.getItems().isEmpty()) {
             table_cart.getItems().forEach(item -> {
-                or.makeOrder(logInController.getCustomer_ID(), orderNumber, item.getID());
+               errorMsg = or.makeOrder(logInController.getCustomer_ID(), orderNumber, item.getID());
             });
+            if (!errorMsg.isBlank()) {
+                JOptionPane.showMessageDialog(null, errorMsg);
+            }
         }
         table_cart.getItems().clear();
 
